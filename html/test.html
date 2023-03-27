@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Notification 通知</title>
+  </head>
+  <body>
+    <div id="app">
+      <br />
+      <el-button plain @click="open"> 可自动关闭 </el-button>
+    </div>
+    <!-- 引入组件库 -->
+    <script type="text/javascript" src="../../lib/vue.js"></script>
+    <script type="text/javascript" src="../../lib/elementui/index.js"></script>
+
+    <script type="text/javascript">
+      new Vue({
+        el: "#app",
+        data: {
+          dialogArr: [],
+        },
+        methods: {
+          clickA() {
+            console.log(this);
+            alert("处理点击标签");
+          },
+          open() {
+            this.dialogArr.push(
+              this.$notify.info({
+                title: "提示",
+                message: "这是一条会自动关闭的消息",
+              })
+            );
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
